@@ -1,0 +1,24 @@
+video 1 
+//why we need databse => varible lost its data when restarting
+# Variables in JavaScript are stored in RAM (volatile memory), which is erased whenever the server process stops or restarts. This is why we need databases for persistent data storage.
+# Databases provide durable, organized, and secure storage on disk, allowing data to remain safe and retrievable even across server restarts and machine reboots
+#CRUD represents the four fundamental operations performed on persistent database storage: Create (insert), Read (fetch), Update (modify), and Delete (remove).
+
+
+#mongoose package database and express se communication ke liye use karte he 
+ bcs ye dono future me allag alag jagaha par honge 
+
+
+ cluster(outer : mongodb://localhost:27017 ) => databases (inside cluster   => mongodb://localhost:27017/notesdb )
+
+
+ In MongoDB, individual data records are stored as 'documents' formatted in BSON (Binary JSON), analogous to rows in relational databases.
+
+ A collection in MongoDB is a group of related documents, analogous to a table in relational database management systems.
+ 
+ Mongoose is the standard Object Data Modeling (ODM) library for MongoDB and Node.js, providing schema validation, model definitions, and database connection utilities.
+
+
+ //folder structure 
+
+ 
