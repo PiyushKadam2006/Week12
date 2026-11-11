@@ -39,3 +39,62 @@ Routes define the available API endpoints (URLs and HTTP methods like GET, POST)
 
 
 ############ how to approach projects ###########
+1.Before writing any code for a new backend project, what is the most important first step?
+asn=> Carefully planning the application requirements, data schemas, and API contract before writing code prevents confusion and costly architectural mistakes.
+
+2.Which tool is widely used by backend developers to test their API endpoints without building a frontend UI first?
+ans => API testing clients like Postman and Thunder Client allow developers to send GET, POST, PUT, and DELETE requests and inspect backend responses directly.
+
+
+
+########## what is authentication ################
+
+user 1 ----
+           |  (konse user ne request kari he ?)
+user 2 --------------> [ + + ]
+           |         (server) 
+user 3 -----
+(users)
+
+then , agar vo user milgaya to uska data database se access karsakte he 
+
+=> Authentication is the process of confirming a user's claimed identity by verifying credentials such as a username/email and password.
+
+What is the key difference between Authentication and Authorization?
+Authentication verifies who you are; Authorization checks what permissions you have
+Authentication answers 'Who are you?' (identity verification), while Authorization answers 'What are you allowed to do?' (permissions and role-based access).
+
+Why should you NEVER store user passwords as plain text (like "password123") in your database?
+Because if the database is leaked or hacked, passwords are fully exposed
+Storing plain text passwords leaves user accounts completely vulnerable to data breaches and insider threats. Passwords must always be cryptographically hashed.
+
+
+
+######### how we implement Authenticaton ################
+
+example of student and admision : =
+ 
+
+ student does addmision -----> college accepts documnet   (database me user ki ditails save ki jayegi ,tokken create karne ke liye use kerte he )
+
+college give identicard -----> student can access college facilities 
+(server token create karke deta he )         (token user rakhata he (cookies storage pe browser me ))
+
+idcard student ke pas hota he college deta he 
+
+agar apne request bheji to pehle apke request ke sath jo request me token ayaa he vo valid/registed he ya nahhi in data base , agar nahi to apko information share karke token lena hoga nahi to permission nahi milpayegi 
+-> agar request ki and tokken valid he then request ke liye dekha jayega 
+-> token nahi aaya request ke sath then pehle tokken ke liye info share kero 
+
+Which popular library is used in Node.js to securely hash and compare user passwords?
+The bcrypt (or bcryptjs) library implements salted hashing with an adaptive work factor, making it the industry standard for secure password storage in Node.js.
+
+What is a "JSON Web Token" (JWT) commonly used for after a user logs in?
+To act as a digital identity badge verifying the user on future requests
+A JSON Web Token (JWT) is a cryptographically signed digital token given to the client upon login, allowing stateless authentication on subsequent API calls.
+
+In Express.js, what is the role of an "Auth Middleware" function on a protected route?
+To verify if a valid token exists before allowing access to the route
+Auth middleware intercepts incoming requests to protected routes, inspects and verifies the JWT token, and only forwards the request to the controller if the token is valid.
+
+
